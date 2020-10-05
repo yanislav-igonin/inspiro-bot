@@ -1,5 +1,5 @@
 {
-  "name": "inspiro_official_bot",
+  "name": "inspiro-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "start": "node build/index.js",
     "build": "tsc -p .",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-    "eslint": "eslint --ext .js,.ts ./",
-    "eslint:fix": "eslint --ext .js,.ts ./src --fix"
+    "lint": "eslint --ext .js,.ts ./",
+    "lint:fix": "eslint --ext .js,.ts ./src --fix"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +33,6 @@
     "typescript": "^3.5.1"
   },
   "husky": {
-    "pre-push": "npm run eslint"
+    "pre-push": "npm run lint"
   }
 }
