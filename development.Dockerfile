@@ -1,9 +1,12 @@
 FROM node:14-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY ./src ./src
+COPY package.json ./
+COPY package-lock.json ./
 
-RUN npm install
+RUN npm i
+
+COPY tsconfig.json ./
 
 CMD ["npm", "run", "dev"]
