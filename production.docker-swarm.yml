@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   app:
-    image: registry.gitlab.com/yanislav-igonin/inspiro_official_bot:latest
+    image: docker.pkg.github.com/yanislav-igonin/inspiro-bot/inspiro-bot:latest
     networks:
       - web
     environment: 
@@ -28,12 +28,12 @@ services:
         traefik.enable: "true"
         traefik.docker.network: "web"
 
-        traefik.http.services.inspiro_bot.loadbalancer.server.port: ${WEBHOOK_PORT}
+        traefik.http.services.inspiro-bot.loadbalancer.server.port: ${WEBHOOK_PORT}
 
-        traefik.http.routers.inspiro_bot-secure.entrypoints: "https"
-        traefik.http.routers.inspiro_bot-secure.rule: "Host(`${WEBHOOK_URL}`) && PathPrefix(`${WEBHOOK_PATH}`)"
-        traefik.http.routers.inspiro_bot-secure.tls: "true"
-        traefik.http.routers.inspiro_bot-secure.service: "inspiro_bot"
+        traefik.http.routers.inspiro-bot-secure.entrypoints: "https"
+        traefik.http.routers.inspiro-bot-secure.rule: "Host(`${WEBHOOK_URL}`) && PathPrefix(`${WEBHOOK_PATH}`)"
+        traefik.http.routers.inspiro-bot-secure.tls: "true"
+        traefik.http.routers.inspiro-bot-secure.service: "inspiro-bot"
 
 networks:
   web:
