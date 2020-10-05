@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: registry.gitlab.com/yanislav-igonin/inspiro_official_bot:latest
+    environment: 
+      - NODE_ENV=production
+      - BOT_TOKEN=${BOT_TOKEN}
+      - IS_WEBHOOK_DISABLED=true
