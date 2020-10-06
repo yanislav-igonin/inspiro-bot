@@ -31,7 +31,7 @@ services:
         traefik.http.services.inspiro-bot.loadbalancer.server.port: ${WEBHOOK_PORT}
 
         traefik.http.routers.inspiro-bot-secure.entrypoints: "https"
-        traefik.http.routers.inspiro-bot-secure.rule: "Host(`${WEBHOOK_URL}`) && PathPrefix(`${WEBHOOK_PATH}`)"
+        traefik.http.routers.inspiro-bot-secure.rule: "Host(`${WEBHOOK_HOST}`) && PathPrefix(`${WEBHOOK_PATH}`)"
         traefik.http.routers.inspiro-bot-secure.tls: "true"
         traefik.http.routers.inspiro-bot-secure.service: "inspiro-bot"
 
